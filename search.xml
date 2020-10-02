@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>毕业季</title>
+      <link href="2020/10/01/zai-guang-mao-de-kong-jian-he-wu-xian-de-shi-jian-zhong-neng-yu-ni-men-gong-xiang-yi-ke-xing-xing-he-tong-yi-duan-shi-guang-shi-wo-de-rong-xing/"/>
+      <url>2020/10/01/zai-guang-mao-de-kong-jian-he-wu-xian-de-shi-jian-zhong-neng-yu-ni-men-gong-xiang-yi-ke-xing-xing-he-tong-yi-duan-shi-guang-shi-wo-de-rong-xing/</url>
+      
+        <content type="html"><![CDATA[<p>在广袤的空间和无限的时间中,能与你们共享一颗行星和同一段时光,是我的荣幸</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 不想为人知的小矫情 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="2020/09/30/hello-world/"/>
       <url>2020/09/30/hello-world/</url>
