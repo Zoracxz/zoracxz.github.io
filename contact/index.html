@@ -311,7 +311,8 @@
         <div class="brand">
             <div class="title center-align">
                 
-                一定要站在你所热爱的世界里闪闪发光
+                    <p class="word" id="motto-content">获取中...</p>
+                    <p class="author" id="motto-author">Just a minute...</p>
                 
             </div>
 
@@ -468,6 +469,29 @@
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    
+        <!-- Local or hitokoto! -->
+
+	
+<script src="/plugin/motto/motto.js"></script>
+
+	
+	<script type="text/javascript">
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
+			
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html("—— "+ mottoTextFrom  );
+		})();	
+	</script>	
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">

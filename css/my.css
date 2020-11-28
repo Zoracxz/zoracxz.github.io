@@ -1,5 +1,18 @@
 /* Here is your custom css styles. */
-
+.bg-cover .title p.author {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    float: right;
+    margin-top: 0px;
+}
+.bg-cover .title p.word {
+    font-size: 2.0rem;
+    text-align: center;
+    line-height: 50px;
+    word-break: normal;
+    margin: 0;
+    padding: 15px 50px;
+}
 /* hexo-filter-github-emojis */
 .github-emoji{
     height: 2em;
