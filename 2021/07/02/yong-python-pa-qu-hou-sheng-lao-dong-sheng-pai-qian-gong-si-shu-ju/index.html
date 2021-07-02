@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="BigQuant代码锦集, ゾラ">
+    <meta name="keywords" content="用Python爬取厚生劳动省派遣公司数据, ゾラ">
     <meta name="description" content="只要朝着阳光努力向上，日子就会变得单纯而美好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>BigQuant代码锦集 | ゾラ</title>
+    <title>用Python爬取厚生劳动省派遣公司数据 | ゾラ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">BigQuant代码锦集</h1>
+                    <h1 class="description center-align post-title">用Python爬取厚生劳动省派遣公司数据</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Bigquant/">
-                                <span class="chip bg-color">Bigquant</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
+                            </a>
+                        
+                            <a href="/tags/Html/">
+                                <span class="chip bg-color">Html</span>
                             </a>
                         
                     </div>
@@ -455,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-25
+                    2021-07-02
                 </div>
                 
 
@@ -471,81 +479,123 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="BigQuant代码锦集"><a href="#BigQuant代码锦集" class="headerlink" title="BigQuant代码锦集"></a>BigQuant代码锦集</h1><p> 这里是平常工作中会用到的一些常用的代码集合，不定时的更新❀</p>
-<hr>
-<h4 id="股票池中去除获取创业板代码"><a href="#股票池中去除获取创业板代码" class="headerlink" title="股票池中去除获取创业板代码"></a>股票池中去除获取创业板代码</h4><pre class=" language-python"><code class="language-python">all_ins <span class="token operator">=</span> D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span>start_date<span class="token operator">=</span><span class="token string">'2017-09-07'</span><span class="token punctuation">,</span>end_date<span class="token operator">=</span><span class="token string">'2018-09-07'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#创业板代码一般以3开头</span>
-ins <span class="token operator">=</span> <span class="token punctuation">[</span>k <span class="token keyword">for</span> k <span class="token keyword">in</span> all_ins <span class="token keyword">if</span> k<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'8'</span><span class="token punctuation">]</span></code></pre>
-<h4 id="求股票的真实价格"><a href="#求股票的真实价格" class="headerlink" title="求股票的真实价格"></a>求股票的真实价格</h4><pre class=" language-python"><code class="language-python">start <span class="token operator">=</span> <span class="token string">'2018-11-23'</span>
-end <span class="token operator">=</span> <span class="token string">'2019-12-20'</span>
-features_data <span class="token operator">=</span> D<span class="token punctuation">.</span>features<span class="token punctuation">(</span>D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span>start<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'close_0'</span><span class="token punctuation">,</span><span class="token string">'close_1'</span><span class="token punctuation">,</span><span class="token string">'close_2'</span><span class="token punctuation">,</span><span class="token string">'volume_0'</span><span class="token punctuation">,</span><span class="token string">'industry_sw_level1_0'</span><span class="token punctuation">,</span><span class="token string">'daily_return_0'</span><span class="token punctuation">,</span><span class="token string">'adjust_factor_0'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-features_data <span class="token operator">=</span> features_data<span class="token punctuation">[</span>features_data<span class="token punctuation">[</span><span class="token string">'instrument'</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'002679.SZA'</span><span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># features_data['date'] = pd.to_datetime(features_data['date']) #将数据类型转换为日期类型</span>
-features_data <span class="token operator">=</span> features_data<span class="token punctuation">.</span>set_index<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 将date设置为index</span>
-features_data <span class="token operator">=</span> features_data<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#获取真实价格</span>
-features_data<span class="token punctuation">[</span><span class="token string">'close_0'</span><span class="token punctuation">]</span> <span class="token operator">/=</span> features_data<span class="token punctuation">[</span><span class="token string">'adjust_factor_0'</span><span class="token punctuation">]</span>
-features_data<span class="token punctuation">[</span><span class="token string">'close_1'</span><span class="token punctuation">]</span> <span class="token operator">/=</span> features_data<span class="token punctuation">[</span><span class="token string">'adjust_factor_0'</span><span class="token punctuation">]</span>
-features_data<span class="token punctuation">[</span><span class="token string">'close_2'</span><span class="token punctuation">]</span> <span class="token operator">/=</span> features_data<span class="token punctuation">[</span><span class="token string">'adjust_factor_0'</span><span class="token punctuation">]</span></code></pre>
-<h4 id="筛选申万行业一的数据"><a href="#筛选申万行业一的数据" class="headerlink" title="筛选申万行业一的数据"></a>筛选申万行业一的数据</h4><pre class=" language-python"><code class="language-python">bar1d <span class="token operator">=</span> DataSource<span class="token punctuation">(</span><span class="token string">"bar1d_index_CN_STOCK_A"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span>start_date<span class="token operator">=</span>start<span class="token punctuation">,</span>end_date<span class="token operator">=</span>end<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#指数行情</span>
-bar1d_sw <span class="token operator">=</span> bar1d<span class="token punctuation">[</span>bar1d<span class="token punctuation">.</span>instrument<span class="token punctuation">.</span>str<span class="token punctuation">.</span>contains<span class="token punctuation">(</span><span class="token string">"SW"</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 筛选出申万行业指数</span>
-bar1d_sw<span class="token punctuation">[</span><span class="token string">'code'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bar1d_sw<span class="token punctuation">[</span><span class="token string">'instrument'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-basic_info_sw <span class="token operator">=</span> DataSource<span class="token punctuation">(</span><span class="token string">"basic_info_IndustrySw"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 读取申万行业基本信息数据</span>
-basic_info_sw<span class="token punctuation">[</span><span class="token string">'code'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"SW"</span> <span class="token operator">+</span> basic_info_sw<span class="token punctuation">[</span><span class="token string">'code'</span><span class="token punctuation">]</span>
-df3 <span class="token operator">=</span> bar1d_sw<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>basic_info_sw<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">'code'</span><span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">'left'</span><span class="token punctuation">)</span></code></pre>
-<h4 id="展开全部行-列"><a href="#展开全部行-列" class="headerlink" title="展开全部行/列"></a>展开全部行/列</h4><pre class=" language-python"><code class="language-python">pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_columns'</span><span class="token punctuation">,</span> None<span class="token punctuation">)</span>
-pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.max_rows'</span><span class="token punctuation">,</span> None<span class="token punctuation">)</span></code></pre>
-<h4 id="计算均值"><a href="#计算均值" class="headerlink" title="计算均值"></a>计算均值</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'mean_5'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'close'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'mean_10'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'close'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'mean_20'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'close'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'mean_60'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'close'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'mean_120'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'close'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h4 id="计算角度"><a href="#计算角度" class="headerlink" title="计算角度"></a>计算角度</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'arctan_5'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'mean_5'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'mean_5'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">180</span><span class="token operator">/</span><span class="token number">3.1416</span>
-df<span class="token punctuation">[</span><span class="token string">'arctan_10'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'mean_10'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'mean_10'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">180</span><span class="token operator">/</span><span class="token number">3.1416</span>
-df<span class="token punctuation">[</span><span class="token string">'arctan_20'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'mean_20'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'mean_20'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">180</span><span class="token operator">/</span><span class="token number">3.1416</span>
-df<span class="token punctuation">[</span><span class="token string">'arctan_60'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'mean_60'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'mean_60'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">180</span><span class="token operator">/</span><span class="token number">3.1416</span>
-df<span class="token punctuation">[</span><span class="token string">'arctan_120'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'mean_120'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'mean_120'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">180</span><span class="token operator">/</span><span class="token number">3.1416</span></code></pre>
-<h4 id="计算振幅"><a href="#计算振幅" class="headerlink" title="计算振幅"></a>计算振幅</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'max_30'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'high'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'min_30'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'low'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rolling<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span><span class="token string">'daily_30'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'max_30'</span><span class="token punctuation">]</span><span class="token operator">/</span>df<span class="token punctuation">[</span><span class="token string">'min_30'</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span></code></pre>
-<h4 id="获取指数成分股股票代码"><a href="#获取指数成分股股票代码" class="headerlink" title="获取指数成分股股票代码"></a>获取指数成分股股票代码</h4><pre class=" language-python"><code class="language-python">date<span class="token operator">=</span><span class="token string">'2017-05-23'</span>
-df <span class="token operator">=</span> D<span class="token punctuation">.</span>history_data<span class="token punctuation">(</span>D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span>date<span class="token punctuation">,</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span>date<span class="token punctuation">,</span>date<span class="token punctuation">,</span>fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'in_csi300'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-hs300 <span class="token operator">=</span> set<span class="token punctuation">(</span>df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'in_csi300'</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'instrument'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<h4 id="禁用缓存"><a href="#禁用缓存" class="headerlink" title="禁用缓存"></a>禁用缓存</h4><pre class=" language-python"><code class="language-python">m1 <span class="token operator">=</span> M<span class="token punctuation">.</span>cached<span class="token punctuation">.</span>v2<span class="token punctuation">(</span>run<span class="token operator">=</span>foo1<span class="token punctuation">,</span>kwargs<span class="token operator">=</span>dict<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'quant'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>m_cached<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span></code></pre>
-<h4 id="获取板块名称列表"><a href="#获取板块名称列表" class="headerlink" title="获取板块名称列表"></a>获取板块名称列表</h4><pre class=" language-python"><code class="language-python">instruments <span class="token operator">=</span> D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df <span class="token operator">=</span> D<span class="token punctuation">.</span>history_data<span class="token punctuation">(</span>instruments<span class="token punctuation">,</span>start_date<span class="token operator">=</span><span class="token string">'2017-05-19'</span><span class="token punctuation">,</span>end_date<span class="token operator">=</span><span class="token string">'2017-05-19'</span><span class="token punctuation">,</span>fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'concept'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-set<span class="token punctuation">(</span><span class="token punctuation">[</span>y <span class="token keyword">for</span> x <span class="token keyword">in</span> df<span class="token punctuation">[</span><span class="token string">'concept'</span><span class="token punctuation">]</span> <span class="token keyword">if</span> x <span class="token keyword">for</span> y <span class="token keyword">in</span> x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<h4 id="获取指定板块数据"><a href="#获取指定板块数据" class="headerlink" title="获取指定板块数据"></a>获取指定板块数据</h4><pre class=" language-python"><code class="language-python">instruments <span class="token operator">=</span> D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span><span class="token punctuation">)</span>
-df <span class="token operator">=</span> D<span class="token punctuation">.</span>history_data<span class="token punctuation">(</span>instruments<span class="token punctuation">,</span>start_date<span class="token operator">=</span><span class="token string">'2017-05-19'</span><span class="token punctuation">,</span>end_date<span class="token operator">=</span><span class="token string">'2017-05-19'</span><span class="token punctuation">,</span>fields<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'concept'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'concept'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span><span class="token string">'智能家居'</span> <span class="token keyword">in</span> x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x <span class="token keyword">else</span> <span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
-<h4 id="回测交易"><a href="#回测交易" class="headerlink" title="回测交易"></a>回测交易</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 证券池：这里使用所有股票</span>
-instruments <span class="token operator">=</span> D<span class="token punctuation">.</span>instruments<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 起始日期</span>
-start_date <span class="token operator">=</span> <span class="token string">'2018-06-01'</span>
-<span class="token comment" spellcheck="true"># 结束日期</span>
-end_date <span class="token operator">=</span> <span class="token string">'2020-11-24'</span>
-<span class="token comment" spellcheck="true"># 初始资金</span>
-capital_base <span class="token operator">=</span> <span class="token number">1000000</span>
-<span class="token comment" spellcheck="true"># 策略比较参考标准，以沪深300为例</span>
-benchmark <span class="token operator">=</span> <span class="token string">'000300.INDX'</span>
-<span class="token comment" spellcheck="true"># 调仓周期（多少个交易日调仓）</span>
-rebalance_period <span class="token operator">=</span> <span class="token number">1</span>
-m <span class="token operator">=</span> M<span class="token punctuation">.</span>trade<span class="token punctuation">.</span>v3<span class="token punctuation">(</span>
-    instruments<span class="token operator">=</span>instruments<span class="token punctuation">,</span>
-    start_date<span class="token operator">=</span>start_date<span class="token punctuation">,</span>
-    end_date<span class="token operator">=</span>end_date<span class="token punctuation">,</span>
-    initialize<span class="token operator">=</span>initialize<span class="token punctuation">,</span>
-    handle_data<span class="token operator">=</span>handle_data<span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true"># 买入订单以收盘价成交</span>
-    order_price_field_buy<span class="token operator">=</span><span class="token string">'close'</span><span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true"># 卖出订单以开盘价成交</span>
-    order_price_field_sell<span class="token operator">=</span><span class="token string">'open'</span><span class="token punctuation">,</span>
-<span class="token comment" spellcheck="true">#     price_type='真实价格',</span>
-    capital_base<span class="token operator">=</span>capital_base<span class="token punctuation">,</span>
-    benchmark<span class="token operator">=</span>benchmark<span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true"># 传入数据给回测模块，所有回测函数里用到的数据都要从这里传入，并通过 context.options 使用，否则可能会遇到缓存问题</span>
-    options<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'selected_data'</span><span class="token punctuation">:</span> selected_data<span class="token punctuation">,</span> <span class="token string">'rebalance_period'</span><span class="token punctuation">:</span> rebalance_period<span class="token punctuation">}</span>
-<span class="token punctuation">)</span></code></pre>
+                <h1 id="用Python爬取厚生劳动省派遣公司数据"><a href="#用Python爬取厚生劳动省派遣公司数据" class="headerlink" title="用Python爬取厚生劳动省派遣公司数据"></a>用Python爬取厚生劳动省派遣公司数据</h1><h2 id="一、爬虫前的准备"><a href="#一、爬虫前的准备" class="headerlink" title="一、爬虫前的准备"></a>一、爬虫前的准备</h2><p>需要的技术知识</p>
+<ul>
+<li>js、html</li>
+<li>Python</li>
+<li>抓包</li>
+<li>BeautifulSoup</li>
+</ul>
+<p>厚生劳动省的查询网站：<a target="_blank" rel="noopener" href="https://jinzai.hellowork.mhlw.go.jp/JinzaiWeb/GICB102010.do">https://jinzai.hellowork.mhlw.go.jp/JinzaiWeb/GICB102010.do</a></p>
+<h2 id="二、分析数据传输"><a href="#二、分析数据传输" class="headerlink" title="二、分析数据传输"></a>二、分析数据传输</h2><p>我们可以看到网站中有一系列筛选条件，我主要关注的是东京地区的公司，所以这里只对东京进行分析，其他的条件自行修改参数即可。我们按F12浏览器开发者模式，进入Network标签页，在页面上选择东京，点击检索。</p>
+<p><img src="https://i.loli.net/2021/07/02/nihXtIgFCA6zVkG.png" alt="检索"></p>
+<p>我们可以观察到Network的变化，其中GICB102010.do就是我们需要的</p>
+<p><img src="https://i.loli.net/2021/07/02/H3ArwghYXf7VmCj.png" alt="抓包"></p>
+<p>点击查看详情，在Headers部分可以看到它的一些基本信息，包括响应头、请求头和请求体等。</p>
+<p><img src="https://i.loli.net/2021/07/02/O4rg5oPtdbHSJTC.png" alt="网络传输数据"></p>
+<p><img src="https://i.loli.net/2021/07/02/9WSYwoGfvcAlmgB.png" alt="请求体参数数据"><br>这里的action参数，我们检索的时候为“search”，分页的时候为“page”。</p>
+<p>接下来我们将用到图片中的数据进行网页信息的获取</p>
+<h2 id="三、利用PostJson测试能否获取网页信息"><a href="#三、利用PostJson测试能否获取网页信息" class="headerlink" title="三、利用PostJson测试能否获取网页信息"></a>三、利用PostJson测试能否获取网页信息</h2><p>PostJson网址：<a target="_blank" rel="noopener" href="http://coolaf.com/tool/post">http://coolaf.com/tool/post</a></p>
+<p>我们将第二步获取的数据填入对应的模块中，它这里用的是Post传参，通过表单进行提交，application/x-www-form-urlencoded，在PostJson中我们选择x-www-form-urlencoded，Cookie选择AREA，输入Cookie，也就是第二步请求头中的Cookies，Headers对应第二步请求头的信息。</p>
+<p><img src="https://i.loli.net/2021/07/02/MBt9PTVsaUwq6kf.png" alt="PostJson"></p>
+<p>点击提交，可以看到，它返回了网站的源代码，效果和我们在查询页面右键点击查看网页源代码一样。</p>
+<h2 id="四、分析网页"><a href="#四、分析网页" class="headerlink" title="四、分析网页"></a>四、分析网页</h2><p><img src="https://i.loli.net/2021/07/02/8kCV7IYUGBrAtWn.png" alt="公司信息表"></p>
+<p>可以看到，总共有12519家公司，而这里采取的分页查询，所以之后我们在进行代码编写的时候，要动态的改变页码参数去循环获取每页的数据。图中表格中的内容就是我们需要的公司信息，右键查看网页源代码。我们找到表格的部分，发现这个表格的id=‘search’，除去第一个为表头，每个公司都在这个表格中占一个。</p>
+<h2 id="五、代码编写"><a href="#五、代码编写" class="headerlink" title="五、代码编写"></a>五、代码编写</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token comment" spellcheck="true">#全局变量</span>
+Num <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token comment" spellcheck="true">#获取网站信息</span>
+<span class="token keyword">def</span> <span class="token function">getHTMLText</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>page<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true">#访问网站需要的数据参数</span>
+        data <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'params'</span><span class="token punctuation">:</span>page<span class="token punctuation">,</span>
+            <span class="token string">'hfCond'</span><span class="token punctuation">:</span><span class="token string">'3mLVm+1L2TF3qSHhXVWLKO2UWAiGJtJ7tzx5ZHVkjZss7jxUSh1jh0ECe+YsZSuzlTMpAfvEs/stliWTLD/MP/D1zphgZT7Fyfpuc5N32Tw='</span><span class="token punctuation">,</span>
+            <span class="token string">'curPage'</span><span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span>
+            <span class="token string">'cbTokyo'</span><span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span>
+            <span class="token string">'ucKyokatodokedeNo1'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'txtKyokatodokedeNo2'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'txtKyokatodokedeNo3'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token comment" spellcheck="true"># 'nm_btnSearch.x': '88',</span>
+            <span class="token comment" spellcheck="true"># 'nm_btnSearch.y': '26',</span>
+            <span class="token string">'hfJigyoshoRegKbn'</span><span class="token punctuation">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span>
+            <span class="token string">'hfScrollTop'</span><span class="token punctuation">:</span> <span class="token string">'1500'</span><span class="token punctuation">,</span>
+            <span class="token string">'screenId'</span><span class="token punctuation">:</span> <span class="token string">'GICB102010'</span><span class="token punctuation">,</span>
+            <span class="token string">'action'</span><span class="token punctuation">:</span> <span class="token string">'page'</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistType'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistKind'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistCode'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistItemCode'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistItemName'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'codeAssistDivide'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            <span class="token string">'maba_vrbs'</span><span class="token punctuation">:</span><span class="token string">''</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">#头部协议</span>
+        headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'Accept'</span><span class="token punctuation">:</span><span class="token string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'</span><span class="token punctuation">,</span>
+            <span class="token string">'Accept-Encoding'</span><span class="token punctuation">:</span><span class="token string">'gzip, deflate, br'</span><span class="token punctuation">,</span>
+            <span class="token string">'Accept-Language'</span><span class="token punctuation">:</span><span class="token string">'ja,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6'</span><span class="token punctuation">,</span>
+            <span class="token string">'Cache-Control'</span><span class="token punctuation">:</span><span class="token string">'max-age=0'</span><span class="token punctuation">,</span>
+            <span class="token string">'Connection'</span><span class="token punctuation">:</span><span class="token string">'keep-alive'</span><span class="token punctuation">,</span>
+            <span class="token string">'Content-Length'</span><span class="token punctuation">:</span><span class="token string">'440'</span><span class="token punctuation">,</span>
+            <span class="token string">'Content-Type'</span><span class="token punctuation">:</span><span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">,</span>
+            <span class="token string">'Cookie'</span><span class="token punctuation">:</span><span class="token string">'JSESSIONID=tnokZeolLdfwYSKnpNpNT34yVuwNXF4W6o68yuN1Cs_mup_yrQai0Nfap8b-0EDR.ICB_001'</span>
+        <span class="token punctuation">}</span>
+        r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        r<span class="token punctuation">.</span>encoding <span class="token operator">=</span> r<span class="token punctuation">.</span>apparent_encoding
+        <span class="token keyword">return</span> r<span class="token punctuation">.</span>text
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">""</span>
+<span class="token comment" spellcheck="true">#循环进行分页操作获取数据</span>
+<span class="token keyword">def</span> <span class="token function">get_html</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>fpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">626</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        page <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+        html <span class="token operator">=</span> getHTMLText<span class="token punctuation">(</span>url<span class="token punctuation">,</span> page<span class="token punctuation">)</span>
+        getCompany<span class="token punctuation">(</span>html<span class="token punctuation">,</span>fpath<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#获取每页的公司信息</span>
+<span class="token keyword">def</span> <span class="token function">getCompany</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span> fpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> Num
+    soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#找到公司信息的表格</span>
+    table <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'search'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#除去表头，对每一行进行循环</span>
+    <span class="token keyword">for</span> tr <span class="token keyword">in</span> table<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            infoDict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            infoDict<span class="token punctuation">[</span><span class="token string">'Num'</span><span class="token punctuation">]</span> <span class="token operator">=</span> Num
+            infoDict<span class="token punctuation">[</span><span class="token string">'許可・受理番号'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbKyokatodokedeNo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string
+            infoDict<span class="token punctuation">[</span><span class="token string">'許可年月日・届出受理年月日'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbKyokatodokedeDate'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string
+            infoDict<span class="token punctuation">[</span><span class="token string">'事業主名称'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbJigyonushiName'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>u<span class="token string">'\u3000'</span><span class="token punctuation">,</span> u<span class="token string">''</span><span class="token punctuation">)</span>
+            infoDict<span class="token punctuation">[</span><span class="token string">'事業所名称'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbJigyoshoName'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>u<span class="token string">'\u3000'</span><span class="token punctuation">,</span> u<span class="token string">''</span><span class="token punctuation">)</span>
+            infoDict<span class="token punctuation">[</span><span class="token string">'事業所所在地'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbJigyoshoAddress'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>u<span class="token string">'\u3000'</span><span class="token punctuation">,</span> u<span class="token string">''</span><span class="token punctuation">)</span>
+            infoDict<span class="token punctuation">[</span><span class="token string">'電話番号'</span><span class="token punctuation">]</span> <span class="token operator">=</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbTel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>string
+            Num <span class="token operator">=</span> Num <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbRyokinaveValue'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                infoDict<span class="token punctuation">[</span><span class="token string">'派遣料金の平均額'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbRyokinaveValue'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parent<span class="token punctuation">.</span>stripped_strings<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbChinginaveValue'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                infoDict<span class="token punctuation">[</span><span class="token string">'派遣労働者の賃金の平均額'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbChinginaveValue'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parent<span class="token punctuation">.</span>stripped_strings<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbPMargin'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                infoDict<span class="token punctuation">[</span><span class="token string">'マージン率'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbPMargin'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parent<span class="token punctuation">.</span>stripped_strings<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbRoshikyoteiShuuki'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                infoDict<span class="token punctuation">[</span><span class="token string">'労使協定の締結'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbRoshikyoteiShuuki'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parent<span class="token punctuation">.</span>stripped_strings<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbYuryou'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                infoDict<span class="token punctuation">[</span><span class="token string">'備考'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tr<span class="token punctuation">.</span>find<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">'ID_lbYuryou'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>parent<span class="token punctuation">.</span>stripped_strings<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>infoDict<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">#保存到文件中</span>
+            <span class="token keyword">with</span> open<span class="token punctuation">(</span>fpath<span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>str<span class="token punctuation">(</span>infoDict<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#爬取的网站信息</span>
+    url <span class="token operator">=</span> <span class="token string">'https://jinzai.hellowork.mhlw.go.jp/JinzaiWeb/GICB102010.do'</span>
+    <span class="token comment" spellcheck="true">#文件保存的地址</span>
+    output_file <span class="token operator">=</span> <span class="token string">'D://python//data//info.txt'</span>
+    get_html<span class="token punctuation">(</span>url<span class="token punctuation">,</span>output_file<span class="token punctuation">)</span>
+main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -589,7 +639,7 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zoracxz.github.io/2021/06/25/bigquant-dai-ma-jin-ji/">https://zoracxz.github.io/2021/06/25/bigquant-dai-ma-jin-ji/</a>
+                    <a href="https://zoracxz.github.io/2021/07/02/yong-python-pa-qu-hou-sheng-lao-dong-sheng-pai-qian-gong-si-shu-ju/">https://zoracxz.github.io/2021/07/02/yong-python-pa-qu-hou-sheng-lao-dong-sheng-pai-qian-gong-si-shu-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -627,8 +677,16 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Bigquant/">
-                                    <span class="chip bg-color">Bigquant</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/js/">
+                                    <span class="chip bg-color">js</span>
+                                </a>
+                            
+                                <a href="/tags/Html/">
+                                    <span class="chip bg-color">Html</span>
                                 </a>
                             
                         </div>
@@ -799,7 +857,7 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
         repo: 'gitalk',
         owner: 'zoracxz',
         admin: "zoracxz",
-        id: '2021-06-25T11-45-47',
+        id: '2021-07-02T11-08-43',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -823,9 +881,10 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/02/yong-python-pa-qu-hou-sheng-lao-dong-sheng-pai-qian-gong-si-shu-ju/">
                     <div class="card-image">
@@ -843,9 +902,9 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -858,6 +917,7 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -884,13 +944,13 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/25/hua-zhan/">
+                <a href="/2021/06/25/bigquant-dai-ma-jin-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="画展">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="BigQuant代码锦集">
                         
-                        <span class="card-title">画展</span>
+                        <span class="card-title">BigQuant代码锦集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -905,8 +965,12 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zora
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" class="post-category">
+                                    技术文档
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -914,8 +978,8 @@ m <span class="token operator">=</span> M<span class="token punctuation">.</span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%BB/">
-                        <span class="chip bg-color">画</span>
+                    <a href="/tags/Bigquant/">
+                        <span class="chip bg-color">Bigquant</span>
                     </a>
                     
                 </div>
