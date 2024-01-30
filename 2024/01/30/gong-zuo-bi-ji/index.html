@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="画展, ゾラ">
+    <meta name="keywords" content="工作笔记, ゾラ">
     <meta name="description" content="只要朝着阳光努力向上，日子就会变得单纯而美好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>画展 | ゾラ</title>
+    <title>工作笔记 | ゾラ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">画展</h1>
+                    <h1 class="description center-align post-title">工作笔记</h1>
                 </div>
             </div>
         </div>
@@ -432,14 +432,27 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%94%BB/">
-                                <span class="chip bg-color">画</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%8A%E4%BA%91/">
+                                <span class="chip bg-color">上云</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" class="post-category">
+                                技术文档
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -448,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-25
+                    2024-01-30
                 </div>
                 
 
@@ -464,16 +477,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="画展"><a href="#画展" class="headerlink" title="画展"></a>画展</h1><hr>
-<p>小白画手偶尔心血来潮的作品，时间按降序排序，喜欢的可以自取~</p>
-<h2 id="2021年7月1日"><a href="#2021年7月1日" class="headerlink" title="2021年7月1日"></a>2021年7月1日</h2><p><img src="/2021/06/25/hua-zhan/lucky.jpg" alt="百事可爱"></p>
-<h2 id="2021年6月30日"><a href="#2021年6月30日" class="headerlink" title="2021年6月30日"></a>2021年6月30日</h2><p><img src="https://i.loli.net/2021/07/02/Eh1qWPnbMjGacfx.jpg" alt="彩虹"></p>
-<h2 id="2021年6月20日"><a href="#2021年6月20日" class="headerlink" title="2021年6月20日"></a>2021年6月20日</h2><p><img src="https://i.loli.net/2021/07/02/oV7bLAMy34WGcRx.jpg" alt="干杯！🍻"></p>
-<h2 id="2021年6月12日"><a href="#2021年6月12日" class="headerlink" title="2021年6月12日"></a>2021年6月12日</h2><p><img src="https://i.loli.net/2021/07/02/PT7e54YQdyoql3t.jpg" alt="万事顺“荔”"></p>
-<h2 id="2021年5月23日"><a href="#2021年5月23日" class="headerlink" title="2021年5月23日"></a>2021年5月23日</h2><p><img src="https://i.loli.net/2021/06/25/SXfycNaFwrM17UP.jpg" alt="スイカ！🍉"></p>
-<h2 id="2021年4月15日"><a href="#2021年4月15日" class="headerlink" title="2021年4月15日"></a>2021年4月15日</h2><p><img src="https://i.loli.net/2021/07/02/GOp8snXZmzVQJM1.jpg" alt="午后"></p>
-<h2 id="2021年2月10日"><a href="#2021年2月10日" class="headerlink" title="2021年2月10日"></a>2021年2月10日</h2><p><img src="https://i.loli.net/2021/07/02/EtmoKp1bZqaw9vY.jpg" alt="冰淇淋！🍦"></p>
-<h2 id="2020年12月1日"><a href="#2020年12月1日" class="headerlink" title="2020年12月1日"></a>2020年12月1日</h2><p><img src="https://i.loli.net/2021/07/02/lxjA3zuOaJi41W5.jpg" alt="月亮！🌙"></p>
+                <h1 id="技术笔记"><a href="#技术笔记" class="headerlink" title="技术笔记"></a>技术笔记</h1><h2 id="sql相关"><a href="#sql相关" class="headerlink" title="sql相关"></a>sql相关</h2><ol>
+<li><p>查询一个数据库里面所有表的数据量</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ANALYZE</span> VERBOSE<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> nspname <span class="token keyword">AS</span> schemaname<span class="token punctuation">,</span>
+       relname <span class="token keyword">AS</span> tablename<span class="token punctuation">,</span>
+       reltuples::<span class="token keyword">bigint</span> <span class="token keyword">AS</span> row_count
+<span class="token keyword">FROM</span> pg_class
+<span class="token keyword">JOIN</span> pg_namespace <span class="token keyword">ON</span> pg_class<span class="token punctuation">.</span>relnamespace <span class="token operator">=</span> pg_namespace<span class="token punctuation">.</span>oid
+<span class="token keyword">WHERE</span> nspname <span class="token operator">=</span> <span class="token string">'public'</span> <span class="token operator">AND</span> relkind <span class="token operator">=</span> <span class="token string">'r'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>更新邮箱字段</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> <span class="token keyword">public</span><span class="token punctuation">.</span>users
+	<span class="token keyword">SET</span> email<span class="token operator">=</span><span class="token keyword">REPLACE</span><span class="token punctuation">(</span>email<span class="token punctuation">,</span><span class="token string">'@daimler.com'</span><span class="token punctuation">,</span><span class="token string">'@mercedes-benz.com'</span><span class="token punctuation">)</span>
+	<span class="token keyword">WHERE</span> email <span class="token operator">like</span> <span class="token string">'%@daimler.com%'</span> <span class="token operator">or</span> email <span class="token operator">like</span> ‘<span class="token operator">%</span><span class="token variable">@Daimler.com</span><span class="token operator">%</span><span class="token string">' ;
+UPDATE public.sc AS lt
+	SET 
+	profile = REPLACE(profile::text,'</span><span class="token variable">@daimler.com</span>'<span class="token punctuation">,</span><span class="token string">'@mercedes-benz.com'</span><span class="token punctuation">)</span>::jsonb
+	<span class="token keyword">WHERE</span> <span class="token punctuation">(</span>profile<span class="token operator">-</span><span class="token operator">&gt;&gt;</span><span class="token string">'email'</span><span class="token punctuation">)</span> <span class="token operator">like</span> <span class="token string">'%@daimler.com%'</span><span class="token punctuation">;</span>
+<span class="token keyword">update</span> companys <span class="token keyword">set</span> name <span class="token operator">=</span> name <span class="token operator">||</span> hstore<span class="token punctuation">(</span><span class="token string">'en'</span><span class="token punctuation">,</span> <span class="token keyword">REPLACE</span><span class="token punctuation">(</span>name<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token string">'en'</span><span class="token punctuation">,</span><span class="token string">'Daimler'</span><span class="token punctuation">,</span><span class="token string">'Mercedes'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token keyword">where</span> name<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token string">'en'</span> <span class="token operator">like</span> <span class="token string">'%Daimler%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>postgres导入数据命令</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">export PATH<span class="token operator">=</span><span class="token string">"/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"</span>
+psql <span class="token operator">-</span>d sap <span class="token operator">-</span>U postgres <span class="token operator">-</span>f <span class="token operator">/</span>Users<span class="token operator">/</span>Desktop<span class="token operator">/</span>sap<span class="token punctuation">.</span><span class="token keyword">sql</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="Python相关"><a href="#Python相关" class="headerlink" title="Python相关"></a>Python相关</h2><ol>
+<li><p>项目启动时安装包命令<br><code>pip install -r requirements/dev.txt -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
+</li>
+<li><p>将一个数组中的值添加到另一个数组<br><code>extend()</code></p>
+</li>
+</ol>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><ol>
+<li><p>查看日志<br><code>docker logs -f -t --tail 10 content_name</code></p>
+</li>
+<li><p>查看所有服务<br><code>docker ps -a</code></p>
+</li>
+<li><p>进入docker容器<br><code>docker exec -it content_name bash</code></p>
+</li>
+<li><p>数据库操作</p>
+<pre class="line-numbers language-none"><code class="language-none">psql -U postgres
+\q quite DB
+exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>redis操作</p>
+<pre class="line-numbers language-none"><code class="language-none">redis-cli
+auth password
+select 10
+del key （清理redis的key）
+keys *（列出所有的key）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p><em>FLUSHDB就是清除当前DB里的所有数据（慎用）FLUSHALL就是清除所有的DB里的所有数据（不要用）</em></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
+<li><p>手动merge<br>git merge –no-commit –no-ff other_branch</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/465078705">代码迁移参考</a></p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -499,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zoracxz.github.io/2021/06/25/hua-zhan/">https://zoracxz.github.io/2021/06/25/hua-zhan/</a>
+                    <a href="https://zoracxz.github.io/2024/01/30/gong-zuo-bi-ji/">https://zoracxz.github.io/2024/01/30/gong-zuo-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,8 +596,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%94%BB/">
-                                    <span class="chip bg-color">画</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%8A%E4%BA%91/">
+                                    <span class="chip bg-color">上云</span>
                                 </a>
                             
                         </div>
@@ -709,7 +772,7 @@
         repo: 'gitalk',
         owner: 'zoracxz',
         admin: "zoracxz",
-        id: '2021-06-25T10-06-30',
+        id: '2024-01-30T23-51-17',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -733,66 +796,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/25/bigquant-dai-ma-jin-ji/">
+                <a href="/2024/01/30/gong-zuo-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="BigQuant代码锦集">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="工作笔记">
                         
-                        <span class="card-title">BigQuant代码锦集</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" class="post-category">
-                                    技术文档
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bigquant/">
-                        <span class="chip bg-color">Bigquant</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/22/android-ping-tai-zheng-he-h5webapp-ji-cheng-qi-ye-wei-xin-sdk/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Android平台整合H5WebApp，集成企业微信SDK">
-                        
-                        <span class="card-title">Android平台整合H5WebApp，集成企业微信SDK</span>
+                        <span class="card-title">工作笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -803,7 +818,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-30
                             </span>
                         <span class="publish-author">
                             
@@ -817,19 +832,61 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/WebApp/">
-                        <span class="chip bg-color">WebApp</span>
+                    <a href="/tags/%E4%B8%8A%E4%BA%91/">
+                        <span class="chip bg-color">上云</span>
                     </a>
                     
-                    <a href="/tags/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1/">
-                        <span class="chip bg-color">企业微信</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/30/python-pei-xun/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Python培训">
+                        
+                        <span class="card-title">Python培训</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zora
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
