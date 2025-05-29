@@ -50,9 +50,9 @@
     
     
     <entry>
-      <title>flask 小白白</title>
-      <link href="/2022/03/27/flask-xiao-bai-bai/"/>
-      <url>/2022/03/27/flask-xiao-bai-bai/</url>
+      <title>flask 小白</title>
+      <link href="/2022/03/27/flask-xiao-bai/"/>
+      <url>/2022/03/27/flask-xiao-bai/</url>
       
         <content type="html"><![CDATA[<h2 id="flask项目启动命令"><a href="#flask项目启动命令" class="headerlink" title="flask项目启动命令"></a>flask项目启动命令</h2><pre class="line-numbers language-none"><code class="language-none">export FLASK_APP=./autoapp.py export FLASK_DEBUG=1flask run --host 0.0.0.0 --port 5000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="flask数据生成命令"><a href="#flask数据生成命令" class="headerlink" title="flask数据生成命令"></a>flask数据生成命令</h2><pre class="line-numbers language-none"><code class="language-none">flask db initflask db migrateflask db upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
